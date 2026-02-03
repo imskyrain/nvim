@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git remote set-url:*)",
+      "Bash(git push:*)",
+      "Bash(cat -A /Users/lty/Tools/git_core/github/nvim/lua/plugins/ui/bufferline.lua)",
+      "Bash(cat -A /Users/lty/Tools/git_core/github/nvim/lua/plugins/ui/lualine.lua)",
+      "Bash(cat:*)",
+      "Bash(python3:*)",
+      "Bash(fc-list:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

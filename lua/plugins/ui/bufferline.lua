@@ -38,13 +38,6 @@ return {
 			sort_by = "insert_after_current", -- buffer 排序方式，可选 "insert_after_current", "id", "extension", "relative_directory", "tabs"
 			offsets = {
 				{
-					filetype = "NvimTree", -- 文件树，如 Neo-tree 窗口左侧的偏移
-					text = "项目目录", -- 可以在这里显示文本
-					text_align = "left",
-					separator = true, -- 是否显示分隔符
-					padding = 1,
-				},
-				{
 					filetype = "neo-tree", -- Neo-tree 的文件类型
 					text = "目录",
 					text_align = "left",

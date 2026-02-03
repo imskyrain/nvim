@@ -15,6 +15,7 @@ return {
 			icons = { "󰉫 ", "󰉬 ", "󰉭 ", "󰉮 ", "󰉯 ", "󰉰 " },
 			render_modes = true,
 		},
+		code = { border = true },
 		sign = { enabled = false },
 	},
 }

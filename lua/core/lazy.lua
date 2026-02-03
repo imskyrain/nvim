@@ -25,8 +25,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local lite_mode = vim.env.NVIM_LITE == "1"
+
 require("lazy").setup({
-	spec = {
+	spec = lite_mode and {
+		{ import = "plugins.lite" },
+	} or {
 		{ import = "plugins" },
 		{ import = "plugins.editor" },
 		{ import = "plugins.git" },
@@ -35,5 +39,5 @@ require("lazy").setup({
 		{ import = "plugins.ui" },
 		{ import = "plugins.utils" },
 	},
-	checker = { enable = true },
+	checker = { enable = not lite_mode },
 })

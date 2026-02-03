@@ -57,7 +57,7 @@ return {
 				poll_rate = 10,
 				filter = vim.log.levels.INFO, -- 过滤掉 INFO 以下的通知
 				history_size = 128,
-				-- override_vim_notify = true, -- **强烈建议开启，让所有 vim.notify 都通过 Fidget 显示**
+				override_vim_notify = true, -- 让所有 vim.notify 都通过 Fidget 显示
 				configs = { default = require("fidget.notification").default_config },
 				redirect = function(msg, level, opts)
 					if opts and opts.on_open then

@@ -1,4 +1,6 @@
 vim.opt.clipboard = "unnamedplus"
+-- 字体
+vim.opt.guifont = "JetBrainsMono_Nerd_Font:h15"
 -- neovide的基础配置文件Basic.lua
 vim.opt.linespace = 2 -- 行距2
 -- 光标动画

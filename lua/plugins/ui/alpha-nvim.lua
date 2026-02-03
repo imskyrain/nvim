@@ -49,21 +49,21 @@ return {
 	config = function(_, dashboard)
 		require("alpha").setup(dashboard.opts)
 
-		-- vim.api.nvim_create_autocmd("User", {
-		--      once = true,
-		--      pattern = "LazyVimStarted",
-		--      callback = function()
-		--              local stats = require("lazy").stats()
-		--              local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-		--              dashboard.section.footer.val = "⚡ Neovim 已加载 "
-		--                      .. stats.loaded
-		--                      .. "/"
-		--                      .. stats.count
-		--                      .. " 个插件 用时 "
-		--                      .. ms
-		--                      .. " 毫秒"
-		--              pcall(vim.cmd.AlphaRedraw)
-		--      end,
-		-- })
+		vim.api.nvim_create_autocmd("User", {
+			once = true,
+			pattern = "LazyVimStarted",
+			callback = function()
+				local stats = require("lazy").stats()
+				local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+				dashboard.section.footer.val = "⚡ Neovim 已加载 "
+					.. stats.loaded
+					.. "/"
+					.. stats.count
+					.. " 个插件 用时 "
+					.. ms
+					.. " 毫秒"
+				pcall(vim.cmd.AlphaRedraw)
+			end,
+		})
 	end,
 }

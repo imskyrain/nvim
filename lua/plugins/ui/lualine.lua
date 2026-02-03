@@ -12,7 +12,20 @@ return {
 			section_separators = "",
 		},
 		sections = {
-			lualine_c = { { "filename", path = 1 } },
+			lualine_c = {
+				{ "filename", path = 1 },
+				{
+					function()
+						if vim.bo.filetype ~= "markdown" then return "" end
+						local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+						local words = 0
+						for _, line in ipairs(lines) do
+							for _ in line:gmatch("%S+") do words = words + 1 end
+						end
+						return string.format("%d 词", words)
+					end,
+				},
+			},
 			lualine_x = {
 				function()
 					local ft = vim.bo.filetype
@@ -43,7 +56,6 @@ return {
 						return f
 					end
 				end,
-				"fileformat",
 				"filetype",
 			},
 		},
